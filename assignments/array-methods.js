@@ -56,6 +56,9 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+runners.forEach(function(notarray){
+    fullName.push(`${notarray.first_name} ${notarray.last_name}`)
+})
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
@@ -70,8 +73,15 @@ console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
+
+// Create an array and set to a variable
+
 let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+
+// Use the reduce method on the runners array and use a arrow function and use the accumluator value along with currentValue arguments filled. With the arrow functions method return the sum of the total and the current value of the donation value with 0 telling it to start at the first value. 
+
+ticketPriceTotal = runners.reduce((total, current) => total + current.donation, 0)
+console.log(`The total raised value is $${ticketPriceTotal}`);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
